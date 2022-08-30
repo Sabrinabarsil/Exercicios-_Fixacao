@@ -6,28 +6,29 @@ import java.util.Scanner;
    9.Crie um programa que recebe 10 valores e ao final imprima o maior número.
  */
 
-
-
 public class Exercicio_09 {
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner (System.in);
+		Scanner scan = new Scanner(System.in);
+
+		int numero, maiorNumero=0, cont=0;
 		
-		int numeros[] = new int [10];
-		int i;
+		System.out.println("Informe 10 numeros aleatórios: ");
 		
-		System.out.print("Informe 10 numeros a seu critério\n");
-		for(i=0 ; i < numeros.length; i++) {
-			System.out.print("numero: ");
-			numeros[i] = scan.nextInt();
+		do {
+			System.out.print((1+cont) + "º valor: ");
+			 numero = scan.nextInt();
+			 
+			 if(numero > maiorNumero) {
+				 maiorNumero = numero;
+				
+			 }
+			 cont++;
 			
-		}
+		} while(cont != 10);
 		
-		System.out.println(numeros[i] + "numeros ");
-		
-		
-		
-		
+		System.out.println("O Maior numero que você digitou foi " + maiorNumero);
+
 		scan.close();
 
 	}
